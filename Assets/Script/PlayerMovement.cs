@@ -7,11 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Collider2D coll2D;
-    //public Animator animator;
+    public Animator animator;
     //private AudioSource audio;
     //public Text Score;
 
-    public float gravity = 1f;
+    //public float gravity = 1f;
     public float maxSpeed = 1f;
     public float SpeedMultiplier;
     public float Speed= 10f;
@@ -21,10 +21,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         //audio = GetComponent<AudioSource>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
@@ -44,10 +43,21 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector2(1f, 1f);
         }
-        if (jump >= 0.02)
+
+        if (jump >= 0.01)// add + touch Ground
         {
-            rb.AddForce(new Vector2(0, 23 * JumpHeight));
+            animator.SetBool("isJump", true);
+            rb.AddForce(new Vector2(0, 1 * JumpHeight));
+            rb.AddForce(transform.up * JumpHeight); 
         }
-        
+        else {
+            animator.SetBool("isJump", false);
+        }
+        animator.SetFloat("Height", jump);
+        if (verticalAxis <= 0.01) 
+        {
+            rb.AddForce(-transform.up * JumpHeight);
+        }
     }
+
 }
