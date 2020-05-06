@@ -5,8 +5,9 @@ using UnityEngine;
 public class MoveLevelBG : MonoBehaviour
 {
     public float speed;
-    public float StartX;
     public float endX;
+    public float StartX;
+    
 
     void Update()
     {
