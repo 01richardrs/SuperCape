@@ -60,4 +60,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            //audio.Play();
+            //animator.SetBool("isDead", true);
+            this.enabled = false;
+
+            //StartCoroutine(Wait2GameOver());
+        }
+    }
+
 }
