@@ -6,12 +6,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public Collider2D coll2D;
+    public BoxCollider2D coll2D;
     public Animator animator;
     //private AudioSource audio;
     //public Text Score;
 
     //public float gravity = 1f;
+    public bool GiantStatus=false;
+    public bool InvicibleStatus=false;
+
     public float maxSpeed = 1f;
     public float SpeedMultiplier;
     public float Speed= 10f;
@@ -21,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         //audio = GetComponent<AudioSource>();
+        coll2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -46,11 +50,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (jump >= 0.01)// add + touch Ground
         {
+            coll2D.size = new Vector2(1.6f, 1.2f);
             animator.SetBool("isJump", true);
             rb.AddForce(new Vector2(0, 1 * JumpHeight));
             rb.AddForce(transform.up * JumpHeight); 
         }
         else {
+            coll2D.size = new Vector2(1.3f, 1.65f);
             animator.SetBool("isJump", false);
         }
         animator.SetFloat("Height", jump);
@@ -62,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy"&&(!GiantStatus && !InvicibleStatus))
         {
             //audio.Play();
             //animator.SetBool("isDead", true);
@@ -70,6 +76,23 @@ public class PlayerMovement : MonoBehaviour
 
             //StartCoroutine(Wait2GameOver());
         }
+    }
+
+    public void Giant()
+    {
+        //bonus point
+        StartCoroutine(GoGiant());
+    }
+
+    IEnumerator GoGiant()
+    {
+        this.transform.localScale = new Vector3(3, 3, 1);
+        coll2D.size = new Vector2(1.6f, 1.2f);
+        GiantStatus = true;
+        yield return new WaitForSeconds(5f);
+        this.transform.localScale = new Vector3(1, 1, 1);
+        coll2D.size = new Vector2(1.3f, 1.65f);
+        GiantStatus = false;
     }
 
 }
