@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public BoxCollider2D coll2D;
     public Animator animator;
+
+    private ScoreManager scoremanager;
     //private AudioSource audio;
     //public Text Score;
 
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         //audio = GetComponent<AudioSource>();
         coll2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        scoremanager = FindObjectOfType<ScoreManager>();
     }
 
     void FixedUpdate()
@@ -73,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
             //audio.Play();
             //animator.SetBool("isDead", true);
             this.enabled = false;
+
+            scoremanager.scoreIncrease = false;
+       
 
             //StartCoroutine(Wait2GameOver());
         }
