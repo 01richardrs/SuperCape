@@ -281,7 +281,7 @@ RectTransform:
   m_Children:
   - {fileID: 286244100}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -399,7 +400,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2b83d41e425c4b4d8d5e4153decd84b, type: 3}
   m_Name: 
@@ -416,11 +417,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2b83d41e425c4b4d8d5e4153decd84b, type: 3}
+  m_Script: {fileID: 11500000, guid: 787c55f83ab0c07498280610cc4ebdea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 0}
-  respawnTime: 1
+  CloudPrefab0: {fileID: 7314284844596631316, guid: e0bff9d13e4002f438d76b03469d6382,
+    type: 3}
+  CloudPrefab1: {fileID: 5835862197210490317, guid: c5639be80abc9b141af1fc5c95c00b5a,
+    type: 3}
+  CloudPrefab2: {fileID: 8239151973554059872, guid: c0e35da0762c0c94c9c238e3a4d5e999,
+    type: 3}
+  CloudPrefab3: {fileID: 423620742122679849, guid: 91103ce3174474b40b1c82f8554b1ba0,
+    type: 3}
+  respawnTime: 0.8
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787c55f83ab0c07498280610cc4ebdea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CloudPrefab0: {fileID: 7314284844596631316, guid: e0bff9d13e4002f438d76b03469d6382,
+    type: 3}
+  CloudPrefab1: {fileID: 5835862197210490317, guid: c5639be80abc9b141af1fc5c95c00b5a,
+    type: 3}
+  CloudPrefab2: {fileID: 8239151973554059872, guid: c0e35da0762c0c94c9c238e3a4d5e999,
+    type: 3}
+  CloudPrefab3: {fileID: 423620742122679849, guid: 91103ce3174474b40b1c82f8554b1ba0,
+    type: 3}
+  respawnTime: 0.5
 --- !u!1 &688651296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3722636272404279524, guid: 537bcfd8a4da37445892ccf79aef357e,
@@ -491,7 +520,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302253867
 GameObject:
@@ -516,13 +545,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302253867}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.081995, y: -1.2705446, z: 0.59375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.0819955, y: -1.2705448, z: 0.59375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 437660759}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &643127732691825474
 PrefabInstance:
@@ -679,6 +708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3722636272404279526, guid: 537bcfd8a4da37445892ccf79aef357e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3722636272404279527, guid: 537bcfd8a4da37445892ccf79aef357e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -747,6 +781,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BG
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407881898514703441, guid: 12a2c321db2bc734d9ce598af3745f82,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6305325310051767758, guid: 12a2c321db2bc734d9ce598af3745f82,
         type: 3}
