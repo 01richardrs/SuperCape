@@ -10,18 +10,4 @@ public class Cloud : MonoBehaviour
     {
         transform.Translate((Vector3.left * speed) * Time.deltaTime);
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Deleter")
-        {
-            //this.GetComponent<Renderer>().enabled = false;
-            StartCoroutine(BeforeDestroyed());
-        }
-    }
-
-    IEnumerator BeforeDestroyed()
-    {
-        yield return new WaitForSeconds(1);
-        Destroy(this.gameObject);
-    }
 }
