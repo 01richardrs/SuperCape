@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public BoxCollider2D coll2D;
     public Animator animator;
+
+    private ScoreManager scoremanager;
     //private AudioSource audio;
     //public Text Score;
 
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         //audio = GetComponent<AudioSource>();
         coll2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        scoremanager = FindObjectOfType<ScoreManager>();
     }
 
     void FixedUpdate()
@@ -41,21 +44,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontalAxis < 0 && this.transform.localScale.x == 1f)
         {
-            transform.localScale = new Vector2(-1f, 1f);
+            transform.localScale = new Vector2(1f, 1f);
         }
         else if (horizontalAxis > 0 && this.transform.localScale.x == -1f)
         {
             transform.localScale = new Vector2(1f, 1f);
         }
 
-        if (jump >= 0.01)// add + touch Ground
+        if (jump >= 0.01 && this.transform.position.y > -2.484081)// add + touch Ground
         {
             coll2D.size = new Vector2(1.6f, 1.2f);
             animator.SetBool("isJump", true);
             rb.AddForce(new Vector2(0, 1 * JumpHeight));
             rb.AddForce(transform.up * JumpHeight); 
         }
-        else {
+        else if (this.transform.position.y <= -.2484081) {
             coll2D.size = new Vector2(1.3f, 1.65f);
             animator.SetBool("isJump", false);
         }
@@ -73,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
             //audio.Play();
             //animator.SetBool("isDead", true);
             this.enabled = false;
+
+            scoremanager.scoreIncrease = false;
+       
 
             //StartCoroutine(Wait2GameOver());
         }
