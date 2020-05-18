@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cloud : MonoBehaviour
+public class InvisibleBonus : MonoBehaviour
 {
     public float speed = 0.1f;
- 
+    public GameObject Player;
+
     void Update()
     {
         transform.Translate((Vector3.left * speed) * Time.deltaTime);
@@ -16,6 +17,11 @@ public class Cloud : MonoBehaviour
         {
             //this.GetComponent<Renderer>().enabled = false;
             StartCoroutine(BeforeDestroyed());
+        }
+        if (other.tag == "Player")
+        {
+            Player.GetComponent<PlayerMovement>().Invisible();
+            Destroy(this.gameObject);
         }
     }
 

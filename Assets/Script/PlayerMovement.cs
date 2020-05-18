@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public BoxCollider2D coll2D;
     public Animator animator;
+    public SpriteRenderer SpriteRender;
 
     private ScoreManager scoremanager;
     //private AudioSource audio;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpriteRender = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         //audio = GetComponent<AudioSource>();
         coll2D = GetComponent<BoxCollider2D>();
@@ -101,4 +103,20 @@ public class PlayerMovement : MonoBehaviour
         GiantStatus = false;
     }
 
+    public void Invisible()
+    {
+        //bonus point
+        StartCoroutine(GoInvisible());
+    }
+
+    IEnumerator GoInvisible()
+    {
+        SpriteRender.color = new Color(1f, 1f, 1f, .5f);
+        InvicibleStatus = true;
+        yield return new WaitForSeconds(5f);
+        SpriteRender.color = new Color(1f, 1f, 1f, 1f);
+        InvicibleStatus = false;
+        //no need change collider since /invi status is true
+    }
+    
 }
