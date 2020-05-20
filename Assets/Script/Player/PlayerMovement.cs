@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         scoremanager = FindObjectOfType<ScoreManager>();
 
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player(Clone)");
     }
 
     void FixedUpdate()
@@ -83,8 +83,6 @@ public class PlayerMovement : MonoBehaviour
             //audio.Play();
             //animator.SetBool("isDead", true);
             //this.enabled = false;
-
-            scoremanager.scoreIncrease = false;
 
 
             //StartCoroutine(Wait2GameOver());

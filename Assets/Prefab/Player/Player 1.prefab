@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3722636272404279520}
   - component: {fileID: 688651301}
   - component: {fileID: 688651297}
-  - component: {fileID: 114699372027692986}
+  - component: {fileID: 114263797865398692}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: bbc9dea8ccf9a8941a32cdc76f7a8c35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8d53de331efb2f449da3cf14a814c65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -163,7 +163,7 @@ Animator:
   m_GameObject: {fileID: 3722636272404279524}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 505ae6b2759dd05419c3324e887ea294, type: 2}
+  m_Controller: {fileID: 9100000, guid: b5568c589cb096a47b2525f2e59c1030, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -172,7 +172,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114699372027692986
+--- !u!114 &114263797865398692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,9 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthNum: 3
-  hearts:
-  - {fileID: 5441922362557985390, guid: 95348c8a68ac57b459776ac862938e37, type: 3}
-  - {fileID: 6505135565058978607, guid: 57bb6524506897e40a540aad59e9d2f5, type: 3}
-  - {fileID: 5260724420378962571, guid: ff9329d90757a724dbf9cfab65b2356f, type: 3}
+  hearts: []
   redHeart: {fileID: 21300000, guid: de027cd4b69b3cb4fb2e7cb98e9d4b8d, type: 3}
   scoreFromManager: 0

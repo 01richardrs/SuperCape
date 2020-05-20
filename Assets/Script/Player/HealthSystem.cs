@@ -12,13 +12,15 @@ public class HealthSystem : MonoBehaviour
 
     GameObject player;
     GameObject loseCanvas;
+    private ScoreManager scoremanager;
 
     public float scoreFromManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        scoremanager = FindObjectOfType<ScoreManager>();
+        player = GameObject.Find("Player(Clone)");
         loseCanvas = GameObject.Find("LoseCanvas");
 
     }
@@ -29,6 +31,7 @@ public class HealthSystem : MonoBehaviour
         if (healthNum < 1)
         {
             //this.enabled = false;
+            scoremanager.scoreIncrease = false;
             loseCanvas.GetComponent<LoseMenu>().activateLoseGame();
 
         }
