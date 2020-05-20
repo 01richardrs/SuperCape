@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     public float SpeedMultiplier;
     public float Speed= 10f;
     public float JumpHeight=10f;
+
+    GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         coll2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         scoremanager = FindObjectOfType<ScoreManager>();
+
+        player = GameObject.Find("Player");
     }
 
     void FixedUpdate()
@@ -77,12 +82,15 @@ public class PlayerMovement : MonoBehaviour
         {
             //audio.Play();
             //animator.SetBool("isDead", true);
-            this.enabled = false;
+            //this.enabled = false;
 
             scoremanager.scoreIncrease = false;
-       
+
 
             //StartCoroutine(Wait2GameOver());
+
+            player.GetComponent<HealthSystem>().HealthLoss();
+            //theHealth.HealthLoss();
         }
     }
 
