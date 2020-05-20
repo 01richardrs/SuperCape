@@ -5,7 +5,7 @@ using UnityEngine;
 public class InvisibleBonus : MonoBehaviour
 {
     public float speed = 0.1f;
-    public GameObject Player;
+    GameObject Player;
 
     void Update()
     {
@@ -20,7 +20,8 @@ public class InvisibleBonus : MonoBehaviour
         }
         if (other.tag == "Player")
         {
-            Player.GetComponent<PlayerMovement>().Invisible();
+            Player = GameObject.FindGameObjectWithTag("Player");
+            Player.GetComponent<PlayerMovement>().Invisible(5);
             Destroy(this.gameObject);
         }
     }

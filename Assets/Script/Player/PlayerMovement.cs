@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer SpriteRender;
 
     private ScoreManager scoremanager;
+    GameObject loseCanvas;
     //private AudioSource audio;
     //public Text Score;
 
@@ -23,9 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public float Speed= 10f;
     public float JumpHeight=10f;
 
-    GameObject player;
-
-    // Start is called before the first frame update
+    public int HEALTH=3;
     void Start()
     {
         SpriteRender = GetComponent<SpriteRenderer>();
@@ -35,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         scoremanager = FindObjectOfType<ScoreManager>();
 
-        player = GameObject.Find("Player(Clone)");
+        loseCanvas = GameObject.Find("LoseCanvas");
     }
 
     void FixedUpdate()
@@ -76,25 +75,40 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (HEALTH < 1)
+        {
+            //audio.Play();
+            //animator.SetBool("isDead", true);
+            scoremanager.scoreIncrease = false;
+            loseCanvas.GetComponent<LoseMenu>().activateLoseGame();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy"&&(!GiantStatus && !InvicibleStatus))
         {
-            //audio.Play();
-            //animator.SetBool("isDead", true);
-            //this.enabled = false;
-
-
-            //StartCoroutine(Wait2GameOver());
-
-            player.GetComponent<HealthSystem>().HealthLoss();
-            //theHealth.HealthLoss();
+            HEALTH--;
+            if (HEALTH > 0)
+            {
+               Invisible(1.5f);
+            }
+                
         }
+    }
+
+    public void HealthBonus()
+    {
+        //supposed to be this easy, but there is a problem sometimes the health cant increment 
+        //and the health++ are counted as its Playerprefs even though there isnt.
+        // HEALTH++;
     }
 
     public void Giant()
     {
-        //bonus point
+        scoremanager.scoreCount += 20;
         StartCoroutine(GoGiant());
     }
 
@@ -109,17 +123,17 @@ public class PlayerMovement : MonoBehaviour
         GiantStatus = false;
     }
 
-    public void Invisible()
+    public void Invisible(float time)
     {
-        //bonus point
-        StartCoroutine(GoInvisible());
+        scoremanager.scoreCount += 15;
+        StartCoroutine(GoInvisible(time));
     }
 
-    IEnumerator GoInvisible()
+    IEnumerator GoInvisible(float time)
     {
         SpriteRender.color = new Color(1f, 1f, 1f, .5f);
         InvicibleStatus = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(time);
         SpriteRender.color = new Color(1f, 1f, 1f, 1f);
         InvicibleStatus = false;
         //no need change collider since /invi status is true

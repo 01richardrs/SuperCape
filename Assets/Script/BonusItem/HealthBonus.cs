@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GiantBonus : MonoBehaviour
+public class HealthBonus : MonoBehaviour
 {
     public float speed = 0.1f;
     GameObject Player;
-
     void Update()
     {
         transform.Translate((Vector3.left * speed) * Time.deltaTime);
@@ -21,7 +20,7 @@ public class GiantBonus : MonoBehaviour
         if (other.tag == "Player")
         {
             Player = GameObject.FindGameObjectWithTag("Player");
-            Player.GetComponent<PlayerMovement>().Giant();
+            Player.GetComponent<PlayerMovement>().HealthBonus();
             Destroy(this.gameObject);
         }
     }

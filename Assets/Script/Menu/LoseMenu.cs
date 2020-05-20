@@ -44,7 +44,6 @@ public class LoseMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Habis kalah keluar");
         Application.Quit();
     }
 

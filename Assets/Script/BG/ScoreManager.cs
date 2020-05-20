@@ -22,12 +22,7 @@ public class ScoreManager : MonoBehaviour
         {
             hiScoreCount = PlayerPrefs.GetFloat("highscore");
         }
-
-
     }
-
-
-
 
     // Update is called once per frame
     void Update()
