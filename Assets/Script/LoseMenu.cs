@@ -14,21 +14,24 @@ public class LoseMenu : MonoBehaviour
 
     public float scoreNum;
 
+    private ScoreManager scoreManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        // score masih kagak bener
-        scoreNum = PlayerPrefs.GetFloat("ScoreNum");
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        scoreNum = scoreManager.scoreCount;
+
         if (GameFinished)
         {
             Time.timeScale = 0f;
             LoseMenuUI.SetActive(true);
-            scoreText.text = "High Score: " + Mathf.Round(scoreNum);
+            scoreText.text = "Score: " + Mathf.Round(scoreNum);
         }
     }
 

@@ -15,8 +15,6 @@ public class ScoreManager : MonoBehaviour
 
     public bool scoreIncrease;
 
-    //GameObject LoseCanvas;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +23,6 @@ public class ScoreManager : MonoBehaviour
             hiScoreCount = PlayerPrefs.GetFloat("highscore");
         }
 
-        //LoseCanvas = GameObject.Find("LoseCanvas");
 
     }
 
@@ -50,10 +47,5 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score: " + Mathf.Round (scoreCount);
         hiScoreText.text = "High Score: " + Mathf.Round(hiScoreCount);
 
-        // score masih kagak bener
-        //if (LoseCanvas.GetComponent<LoseMenu>().GameFinished == true)
-        //{
-        PlayerPrefs.SetFloat("ScoreNum", scoreCount);
-        //}
     }
 }

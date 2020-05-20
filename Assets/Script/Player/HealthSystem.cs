@@ -13,11 +13,14 @@ public class HealthSystem : MonoBehaviour
     GameObject player;
     GameObject loseCanvas;
 
+    public float scoreFromManager;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         loseCanvas = GameObject.Find("LoseCanvas");
+
     }
 
     // Update is called once per frame
@@ -27,6 +30,7 @@ public class HealthSystem : MonoBehaviour
         {
             //this.enabled = false;
             loseCanvas.GetComponent<LoseMenu>().activateLoseGame();
+
         }
 
         // buat display jumlah health, tergantung ama health num
