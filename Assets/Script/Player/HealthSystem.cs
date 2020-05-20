@@ -11,20 +11,22 @@ public class HealthSystem : MonoBehaviour
     public Sprite redHeart;
 
     GameObject player;
+    GameObject loseCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
+        loseCanvas = GameObject.Find("LoseCanvas");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hearts.Length < 1)
+        if (healthNum < 1)
         {
-            //Debug.Log("lebu");
             //this.enabled = false;
+            loseCanvas.GetComponent<LoseMenu>().activateLoseGame();
         }
 
         // buat display jumlah health, tergantung ama health num
