@@ -9,10 +9,14 @@ public class PauseMenu : MonoBehaviour
 
 	public GameObject pauseMenuUI;
 
-    // Update is called once per frame
+    public GameObject GameManager;
+
+    float BasicSpeed;
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        BasicSpeed = GameManager.GetComponent<SpeedMultiplier>().BasicSpeed;
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
         	if(GameIsPaused)
         	{
@@ -28,7 +32,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
     	pauseMenuUI.SetActive(false);
-    	Time.timeScale = 1f; //change this according to current speed of the game
+    	Time.timeScale = BasicSpeed; //change this according to current speed of the game
     	GameIsPaused = false;
     }
 
@@ -42,7 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
     	SceneManager.LoadScene("StartGame");
-    	Time.timeScale = 1f;
+    	Time.timeScale = BasicSpeed;
     }
 
     public void QuitGame()
