@@ -79,10 +79,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (HEALTH < 1)
         {
+            StartCoroutine(Dead());
             //audio.Play();
             //animator.SetBool("isDead", true);
-            scoremanager.scoreIncrease = false;
-            loseCanvas.GetComponent<LoseMenu>().activateLoseGame();
+            
         }
     }
 
@@ -137,6 +137,17 @@ public class PlayerMovement : MonoBehaviour
         SpriteRender.color = new Color(1f, 1f, 1f, 1f);
         InvicibleStatus = false;
         //no need change collider since /invi status is true
+    }
+
+    IEnumerator Dead()
+    {
+        animator.SetBool("isDead", true);
+        coll2D.size = new Vector2(1.6f, 1.2f);
+        this.enabled = false;
+        rb.AddForce(-transform.up*75);
+        scoremanager.scoreIncrease = false;
+        yield return new WaitForSeconds(2);
+        loseCanvas.GetComponent<LoseMenu>().activateLoseGame();
     }
     
 }
