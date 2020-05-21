@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
 
     private ScoreManager scoremanager;
     GameObject loseCanvas;
-    //private AudioSource audio;
+    public AudioSource Audio;
+    public AudioClip Hit_SFX;
+    public AudioClip Bonus_SFX;
+    public AudioClip Coins_SFX;
+    
     //public Text Score;
 
     //public float gravity = 1f;
@@ -29,12 +33,13 @@ public class PlayerMovement : MonoBehaviour
     {
         SpriteRender = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        //audio = GetComponent<AudioSource>();
         coll2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         scoremanager = FindObjectOfType<ScoreManager>();
 
         loseCanvas = GameObject.Find("LoseCanvas");
+
+        Audio = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -91,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "Enemy"&&(!GiantStatus && !InvicibleStatus))
         {
             HEALTH--;
+            Audio.PlayOneShot(Hit_SFX);
             if (HEALTH > 0)
             {
                Invisible(1.5f);
@@ -109,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
     public void Giant()
     {
         scoremanager.scoreCount += 20;
+        Audio.PlayOneShot(Bonus_SFX);
         StartCoroutine(GoGiant());
     }
 
@@ -125,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Invisible(float time)
     {
+        Audio.PlayOneShot(Bonus_SFX);
         scoremanager.scoreCount += 15;
         StartCoroutine(GoInvisible(time));
     }
@@ -149,5 +157,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(2);
         loseCanvas.GetComponent<LoseMenu>().activateLoseGame();
     }
-    
+
+    //Audio.PlayOneShot(Coins_SFX); for coins
+
 }
