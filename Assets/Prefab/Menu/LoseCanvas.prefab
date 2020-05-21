@@ -815,3 +815,4 @@ MonoBehaviour:
   scoreText: {fileID: 175609308314641231}
   scoreNum: 0
   GameManager: {fileID: 0}
+  PauseMenu: {fileID: 0}

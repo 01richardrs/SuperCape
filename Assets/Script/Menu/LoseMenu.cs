@@ -17,6 +17,7 @@ public class LoseMenu : MonoBehaviour
     private ScoreManager scoreManager;
 
     public GameObject GameManager;
+    public GameObject PauseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,8 @@ public class LoseMenu : MonoBehaviour
 
         if (GameFinished)
         {
+            PauseMenu.GetComponent<PauseMenu>().enabled = false;
             GameManager.GetComponent<SpeedMultiplier>().enabled = false;
-            GameManager.GetComponent<EnvironmentManager>().enabled = false;
             Time.timeScale = 0f;
             LoseMenuUI.SetActive(true);
             scoreText.text = "Score: " + Mathf.Round(scoreNum);
