@@ -32,6 +32,7 @@ public class LoseMenu : MonoBehaviour
         if (GameFinished)
         {
             GameManager.GetComponent<SpeedMultiplier>().enabled = false;
+            GameManager.GetComponent<EnvironmentManager>().enabled = false;
             Time.timeScale = 0f;
             LoseMenuUI.SetActive(true);
             scoreText.text = "Score: " + Mathf.Round(scoreNum);

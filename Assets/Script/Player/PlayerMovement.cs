@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector2(1f, 1f);
         }
 
-        if (jump >= 0.01 && this.transform.position.y > -2.484081)// add + touch Ground
+        if (jump >= 0.01)// add + touch Ground
         {
             coll2D.size = new Vector2(1.6f, 1.2f);
             animator.SetBool("isJump", true);

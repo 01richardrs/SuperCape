@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpeedMultiplier : MonoBehaviour
 {
+    public GameObject PauseMenu;
     float playedTime;
     public float BasicSpeed = 0.8f;
     // Start is called before the first frame update
@@ -15,27 +16,30 @@ public class SpeedMultiplier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playedTime += Time.deltaTime;
-        Time.timeScale = BasicSpeed;
-        if (playedTime > 0)
+        if(!(Time.timeScale == 0)) 
         {
-            BasicSpeed += 0.00005f;
-        }
-        else if (playedTime > 5)
-        {
-            BasicSpeed += 0.00010f;
-        }
-        else if (playedTime > 150)
-        {
+            playedTime += Time.deltaTime;
+            Time.timeScale = BasicSpeed;
+            if (playedTime > 0)
+            {
+                BasicSpeed += 0.00005f;
+            }
+            else if (playedTime > 5)
+            {
+                BasicSpeed += 0.00010f;
+            }
+            else if (playedTime > 150)
+            {
 
-        }
-        else if (playedTime > 300)
-        {
-            BasicSpeed += 0.00050f;
-        }
-        else
-        {
-            BasicSpeed += 0.00100f;
+            }
+            else if (playedTime > 300)
+            {
+                BasicSpeed += 0.00050f;
+            }
+            else
+            {
+                BasicSpeed += 0.00100f;
+            }
         }
     }
 }
