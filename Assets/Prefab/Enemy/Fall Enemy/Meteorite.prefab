@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 7521813689105088589}
   - component: {fileID: 7521813689105088588}
   - component: {fileID: 7521813689105088586}
-  - component: {fileID: 1403527429929936054}
   - component: {fileID: 5407154851923061416}
   - component: {fileID: 3944610767212641365}
   m_Layer: 0
-  m_Name: Coconut
+  m_Name: Meteorite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: c166af5a4d73563478193b1b10fbaaa1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae1390020ee1131448aef4cd3cff8ab9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,23 +103,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1403527429929936054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521813689105088584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab0c4813468465b498ba7b12273a4369, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerInvisible: 0
-  PlayerGiant: 0
-  Player: {fileID: 3722636272404279524, guid: 537bcfd8a4da37445892ccf79aef357e, type: 3}
-  Bcoll2D: {fileID: 0}
-  Ccoll2D: {fileID: 3944610767212641365}
 --- !u!58 &5407154851923061416
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,9 +116,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007738918, y: 0}
+  m_Offset: {x: 0.46, y: 0.76}
   serializedVersion: 2
-  m_Radius: 0.65296054
+  m_Radius: 2.4998484
 --- !u!58 &3944610767212641365
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,6 +132,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015477836, y: 0}
+  m_Offset: {x: 0.46000004, y: 0.7857004}
   serializedVersion: 2
-  m_Radius: 0.70713294
+  m_Radius: 2.7182994

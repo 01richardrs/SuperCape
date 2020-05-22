@@ -6,28 +6,24 @@ public class ObjectEnemy : MonoBehaviour
 {
     public bool PlayerInvisible = false;
     public bool PlayerGiant = false;
-    public GameObject Player;
+    GameObject Player;
     public BoxCollider2D Bcoll2D;
-    public CircleCollider2D Ccoll2D;
-
     private void Start()
     {
         Bcoll2D = GetComponent<BoxCollider2D>();
-        Ccoll2D = GetComponent<CircleCollider2D>();
     }
     private void Update()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         PlayerInvisible = Player.GetComponent<PlayerMovement>().InvicibleStatus;
         PlayerGiant = Player.GetComponent<PlayerMovement>().GiantStatus;
 
         if (PlayerInvisible)
         {
             Bcoll2D.enabled = false;
-            Ccoll2D.enabled = false;
         }
         else {
             Bcoll2D.enabled = true;
-            Ccoll2D.enabled = true;
         }
         if (PlayerGiant)
         {

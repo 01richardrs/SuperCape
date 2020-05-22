@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudSpawner : MonoBehaviour
+public class SpawnCloud : MonoBehaviour
 {
     public GameObject CloudPrefab0;
     public GameObject CloudPrefab1;

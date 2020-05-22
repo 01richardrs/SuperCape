@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0a7e5d7aafa7adb47b46dc376e9c2ff2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,7 +144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerInvisible: 0
   PlayerGiant: 0
-  Player: {fileID: 3722636272404279524, guid: 537bcfd8a4da37445892ccf79aef357e, type: 3}
   Bcoll2D: {fileID: 61183487500828762}
   Ccoll2D: {fileID: 0}
 --- !u!61 &61183487500828762

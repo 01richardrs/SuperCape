@@ -32,8 +32,7 @@ public class BonusSpawner : MonoBehaviour
                 }
         
                 BonusTime = 0;
-            }
-            
+            } 
         }
     }
 }

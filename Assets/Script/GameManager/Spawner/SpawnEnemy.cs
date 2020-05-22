@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeployEnemy : MonoBehaviour
+public class SpawnEnemy : MonoBehaviour
 {
     int CityInfo;
-    float timecount;
-    public float respawnTime = 15.0f;
+    public float respawnTime = 5.8f;
 
     public GameObject Enemy01;
     public GameObject Enemy02;
@@ -34,11 +33,11 @@ public class DeployEnemy : MonoBehaviour
             if (RandNum>87)
             {
                 GameObject Dragon = Instantiate(Enemy01) as GameObject;
-                Dragon.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+                Dragon.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-3.25f, 4.55f));
             }
             else {
                 GameObject Bird = Instantiate(Enemy04) as GameObject;
-                Bird.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+                Bird.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-1.88f, 4.11f));
             }
             
         }
@@ -49,12 +48,12 @@ public class DeployEnemy : MonoBehaviour
             if (RandNum < 71)
             {
                 GameObject Crab = Instantiate(Enemy02) as GameObject;
-                Crab.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+                Crab.transform.position = new Vector2(screenBounds.x * -2,-3.17f);
             }
             else 
             {
                 GameObject Squid = Instantiate(Enemy03) as GameObject;
-                Squid.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+                Squid.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-3.25f, 4.55f));
             }
             
         }
