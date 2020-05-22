@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemy : MonoBehaviour
+public class Spawn_Enemy : MonoBehaviour
 {
     int CityInfo;
     public float respawnTime = 5.8f;
@@ -24,6 +24,7 @@ public class SpawnEnemy : MonoBehaviour
     {
        CityInfo = this.GetComponent<EnvironmentManager>().CityStatus;
     }
+
     IEnumerator SpawnEnemy()
     {
         while (CityInfo == 0)

@@ -8,6 +8,7 @@ public class HealthSystem : MonoBehaviour
     int healthNum;
     public Image[] hearts;
     GameObject Player;
+
     void Update()
     {
         Player = GameObject.FindGameObjectWithTag("Player");

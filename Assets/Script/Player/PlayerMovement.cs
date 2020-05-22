@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float Speed= 10f;
     public float JumpHeight=10f;
 
+
     public int HEALTH=3;
     void Start()
     {
@@ -109,7 +110,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //supposed to be this easy, but there is a problem sometimes the health cant increment 
         //and the health++ are counted as its Playerprefs even though there isnt.
-        // HEALTH++;
+        if ( HEALTH < 3 )
+        {
+            HEALTH++;
+        } 
+   
     }
 
     public void Giant()

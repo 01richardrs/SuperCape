@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8036142993832652836}
   m_Layer: 0
   m_Name: Health Bonus
-  m_TagString: Untagged
+  m_TagString: HealthBonus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  Player: {fileID: 3722636272404279524, guid: 537bcfd8a4da37445892ccf79aef357e, type: 3}
 --- !u!61 &8036142993832652891
 BoxCollider2D:
   m_ObjectHideFlags: 0
