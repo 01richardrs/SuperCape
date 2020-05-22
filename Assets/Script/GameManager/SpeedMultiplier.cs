@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpeedMultiplier : MonoBehaviour
 {
     public GameObject PauseMenu;
-    float playedTime;
+    public float playedTime;
     public float BasicSpeed = 0.8f;
     // Start is called before the first frame update
     void Start()

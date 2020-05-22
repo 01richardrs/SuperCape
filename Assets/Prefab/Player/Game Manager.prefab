@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 2046488596}
   - component: {fileID: 2046488597}
   - component: {fileID: 2046488603}
+  - component: {fileID: 8261288111298960701}
   m_Layer: 0
-  m_Name: SpawnMain
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
+  playedTime: 0
   BasicSpeed: 1
 --- !u!82 &2046488596
 AudioSource:
@@ -319,3 +321,21 @@ MonoBehaviour:
     type: 3}
   Ground2: {fileID: 1244386253428150853, guid: 857e25d479a10f5409de827461b2b1a4, type: 3}
   EnvBGM2: {fileID: 2046488596}
+--- !u!114 &8261288111298960701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4355177141016224321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057a5337ca33f1c44b8b944f0d4b2a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Giant_Bonus: {fileID: 3188796466740432353, guid: 80b2a0bf45a08c145947ec7604c28102,
+    type: 3}
+  Invisible_Bonus: {fileID: 8036142993832652837, guid: b3668d80c4594dc43ae306e35fe45387,
+    type: 3}
+  Health_Bonus: {fileID: 7522068999553957367, guid: 2f49c9e742829764882a1686e020d570,
+    type: 3}
