@@ -67,9 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b83d41e425c4b4d8d5e4153decd84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 4869669749802831823, guid: aae143a3918a03a40bd321be3da75a84,
-    type: 3}
-  respawnTime: 1
+  respawnTime: 3.7
+  Enemy01: {fileID: 4869669749802831823, guid: aae143a3918a03a40bd321be3da75a84, type: 3}
+  Enemy02: {fileID: 643127731342061186, guid: b93cca814ea6be844b5234f24820c5ad, type: 3}
+  Enemy03: {fileID: 8749711130194978887, guid: 3d7b1f20b6a94954b9801233774599ee, type: 3}
+  Enemy04: {fileID: 299242379882022043, guid: 0b6bc487d84447445a0d411dc2c90b7a, type: 3}
 --- !u!114 &6303822539827851304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1003226202d4e74a96cb7e67857e3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CityStatus: 0
   Audio:
   - {fileID: 2046488597}
   - {fileID: 2046488596}
@@ -335,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Giant_Bonus: {fileID: 3188796466740432353, guid: 80b2a0bf45a08c145947ec7604c28102,
     type: 3}
-  Invisible_Bonus: {fileID: 8036142993832652837, guid: b3668d80c4594dc43ae306e35fe45387,
+  Invisible_Bonus: {fileID: 7522068999553957367, guid: 2f49c9e742829764882a1686e020d570,
     type: 3}
-  Health_Bonus: {fileID: 7522068999553957367, guid: 2f49c9e742829764882a1686e020d570,
+  Health_Bonus: {fileID: 8036142993832652837, guid: b3668d80c4594dc43ae306e35fe45387,
     type: 3}

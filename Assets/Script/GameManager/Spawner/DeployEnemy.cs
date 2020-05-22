@@ -4,29 +4,61 @@ using UnityEngine;
 
 public class DeployEnemy : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
-    public float respawnTime = 1.0f;
+    int CityInfo;
+    float timecount;
+    public float respawnTime = 15.0f;
+
+    public GameObject Enemy01;
+    public GameObject Enemy02;
+    public GameObject Enemy03;
+    public GameObject Enemy04;
+    
     private Vector2 screenBounds;
     // Start is called before the first frame update
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
-        StartCoroutine(enemyWave());
+        StartCoroutine(SpawnEnemy());
     }
 
-    private void spawnEnemy()
+    private void Update()
     {
-        GameObject a = Instantiate(EnemyPrefab) as GameObject;
-        a.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+       CityInfo = this.GetComponent<EnvironmentManager>().CityStatus;
     }
-
-    IEnumerator enemyWave()
+    IEnumerator SpawnEnemy()
     {
-        while (true)
+        while (CityInfo == 0)
         {
+            var RandNum = Random.Range(0,100);
             yield return new WaitForSeconds(respawnTime);
-            spawnEnemy();
+            if (RandNum>87)
+            {
+                GameObject Dragon = Instantiate(Enemy01) as GameObject;
+                Dragon.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+            }
+            else {
+                GameObject Bird = Instantiate(Enemy04) as GameObject;
+                Bird.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+            }
+            
         }
-        
+        while (CityInfo == 1)
+        {
+            var RandNum = Random.Range(0, 100);
+            yield return new WaitForSeconds(respawnTime);
+            if (RandNum < 71)
+            {
+                GameObject Crab = Instantiate(Enemy02) as GameObject;
+                Crab.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+            }
+            else 
+            {
+                GameObject Squid = Instantiate(Enemy03) as GameObject;
+                Squid.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+            }
+            
+        }
+        StartCoroutine(SpawnEnemy());
     }
+
 }

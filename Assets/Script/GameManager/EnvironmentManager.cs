@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnvironmentManager : MonoBehaviour
 {
-    int CityStatus=0;
+    public int CityStatus=0;
     public AudioSource[] Audio;
 
     public GameObject Environment1;

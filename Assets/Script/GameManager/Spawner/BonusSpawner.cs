@@ -16,21 +16,21 @@ public class BonusSpawner : MonoBehaviour
             if (BonusTime > 75)
             {
                 var randY = Random.Range(-2.4f, 3.50f);
-                var randnum = Random.Range(0, 2);
-                Debug.Log("Bonus Is Coming");
-                switch (randnum)
+                var randnum = Random.Range(0, 100);
+                Debug.Log("BONUS RAND" + randnum);
+                if (randnum < 40)
                 {
-                    
-                    case 0:
-                        GameObject Bonus0 = Instantiate(Giant_Bonus, new Vector2(10.2f, randY), Quaternion.identity) as GameObject;
-                        break;
-                    case 1:
-                        GameObject Bonus1 = Instantiate(Invisible_Bonus, new Vector2(10.2f, randY), Quaternion.identity) as GameObject;
-                        break;
-                    case 2:
-                        GameObject Bonus2 = Instantiate(Health_Bonus, new Vector2(10.2f, -randY), Quaternion.identity) as GameObject;
-                        break;
+                    GameObject Bonus0 = Instantiate(Giant_Bonus, new Vector2(10.2f, randY), Quaternion.identity) as GameObject;
+                } 
+                else if (randnum > 60)
+                {
+                    GameObject Bonus1 = Instantiate(Invisible_Bonus, new Vector2(10.2f, randY), Quaternion.identity) as GameObject;
                 }
+                else 
+                {
+                    GameObject Bonus2 = Instantiate(Health_Bonus, new Vector2(10.2f, -randY), Quaternion.identity) as GameObject;
+                }
+        
                 BonusTime = 0;
             }
             
