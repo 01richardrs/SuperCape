@@ -46,6 +46,13 @@ public class LoseMenu : MonoBehaviour
         SceneManager.LoadScene("StartGame");
         Time.timeScale = 1f;
     }
+    public void loadlevel()
+    {
+        string scene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        Time.timeScale = 1f;
+        RestartGame();
+    }
 
     public void ExitGame()
     {
@@ -55,5 +62,9 @@ public class LoseMenu : MonoBehaviour
     public void activateLoseGame()
     {
         GameFinished = true;
+    }
+    public void RestartGame()
+    {
+        GameFinished = false;
     }
 }

@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject GameManager;
 
+    public GameObject LoseManager;
+
     float BasicSpeed;
 
     void Update()
@@ -47,6 +49,14 @@ public class PauseMenu : MonoBehaviour
     {
     	SceneManager.LoadScene("StartGame");
     	Time.timeScale = BasicSpeed;
+    }
+
+    public void loadlevel()
+    {
+        string scene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        Time.timeScale = 1f;
+        LoseManager.GetComponent<LoseMenu>().RestartGame();
     }
 
     public void QuitGame()
