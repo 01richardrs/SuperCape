@@ -27,14 +27,15 @@ public class SpawnFallingObstacle : MonoBehaviour
         while (CityInfo == 0)
         {
             yield return new WaitForSeconds(respawnTime);
-            GameObject Meteorite = Instantiate(Obstacle1) as GameObject;
+            GameObject Meteorite = Instantiate(Obstacle2) as GameObject;
             Meteorite.transform.position = new Vector2(Random.Range(-3.25f, 4.55f), 5);
         }
         while (CityInfo == 1)
         {
+            ; ;
             yield return new WaitForSeconds(respawnTime);
-            GameObject Coconut = Instantiate(Obstacle2) as GameObject;
-            Coconut.transform.position = new Vector2(Random.Range(-3.25f, 4.55f), -3.17f); 
+            GameObject Coconut = Instantiate(Obstacle1) as GameObject;
+            Coconut.transform.position = new Vector2(Random.Range(-3.25f, 4.55f), 5); 
         }
         StartCoroutine(SpawnEnemy());
     }

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2046488597}
   - component: {fileID: 2046488596}
   - component: {fileID: 5290343434830996357}
+  - component: {fileID: 8335563715941635461}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a2744ee7200df41b2d3ee9e92d32af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 3.8
+  respawnTime: 5
   Pattern0: {fileID: 5064267703299069796, guid: ce4ed3c9edf3fe640b290a66490fb476,
     type: 3}
   Pattern1: {fileID: 39417463563414472, guid: d301c073a2a5eb74687ba563e23e990f, type: 3}
@@ -368,4 +369,21 @@ MonoBehaviour:
   Pattern5: {fileID: 5064267703299069796, guid: 72c58abd94038a945b86ecd44b3097ed,
     type: 3}
   Pattern6: {fileID: 5064267703299069796, guid: 498dfba2cc8a77346a49e61fb58cd720,
+    type: 3}
+--- !u!114 &8335563715941635461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4355177141016224321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d3c917a95b982409e9e2ab5c161e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnTime: 15
+  Obstacle1: {fileID: 7521813689105088584, guid: 8e2246d97d2eef44cb371683cf735f4e,
+    type: 3}
+  Obstacle2: {fileID: 7521813689105088584, guid: 8c1db0bc286ce6946a5207f5d768a3bd,
     type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7521813689105088586}
   - component: {fileID: 5407154851923061416}
   - component: {fileID: 3944610767212641365}
+  - component: {fileID: 4978954835621602890}
   m_Layer: 0
   m_Name: Coconut
   m_TagString: Enemy
@@ -135,3 +136,19 @@ CircleCollider2D:
   m_Offset: {x: 0.015477836, y: 0}
   serializedVersion: 2
   m_Radius: 0.70713294
+--- !u!114 &4978954835621602890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521813689105088584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4980bd4c267e44aa9a8c97b27ed1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInvisible: 0
+  PlayerGiant: 0
+  Ccoll2D: {fileID: 3944610767212641365}
+  speed: 2
