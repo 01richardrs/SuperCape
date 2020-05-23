@@ -628,6 +628,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 175609307106775212, guid: e3da93b5d66b26148b3c3b91cbd977f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 175609308835395372, guid: e3da93b5d66b26148b3c3b91cbd977f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.039978027
+      objectReference: {fileID: 0}
     - target: {fileID: 175609309135917304, guid: e3da93b5d66b26148b3c3b91cbd977f6,
         type: 3}
       propertyPath: GameManager
@@ -886,6 +896,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2046488596, guid: ed0c3ad18c130c640bf09504803a1b74, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046488596, guid: ed0c3ad18c130c640bf09504803a1b74, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c86662bb82e9efa46bc2b562d3c87772, type: 3}
+    - target: {fileID: 2046488597, guid: ed0c3ad18c130c640bf09504803a1b74, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046488597, guid: ed0c3ad18c130c640bf09504803a1b74, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 664167d820180e34b9e59f38156cbd7a, type: 3}
     - target: {fileID: 2046488600, guid: ed0c3ad18c130c640bf09504803a1b74, type: 3}
       propertyPath: PauseMenu
       value: 
