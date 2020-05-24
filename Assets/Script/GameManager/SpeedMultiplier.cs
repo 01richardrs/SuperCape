@@ -6,7 +6,7 @@ public class SpeedMultiplier : MonoBehaviour
 {
     public GameObject PauseMenu;
     public float playedTime;
-    public float BasicSpeed = 0.8f;
+    public float BasicSpeed = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +22,11 @@ public class SpeedMultiplier : MonoBehaviour
             Time.timeScale = BasicSpeed;
             if (playedTime > 0)
             {
-                BasicSpeed += 0.00005f;
+                BasicSpeed += 0.000025f;
             }
             else if (playedTime > 5)
             {
-                BasicSpeed += 0.00010f;
+                BasicSpeed += 0.00005f;
             }
             else if (playedTime > 150)
             {
@@ -34,11 +34,11 @@ public class SpeedMultiplier : MonoBehaviour
             }
             else if (playedTime > 300)
             {
-                BasicSpeed += 0.00050f;
+                BasicSpeed += 0.00025f;
             }
             else
             {
-                BasicSpeed += 0.00100f;
+                BasicSpeed += 0.00050f;
             }
         }
     }
