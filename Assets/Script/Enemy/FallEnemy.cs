@@ -20,11 +20,12 @@ public class FallEnemy : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerInvisible = Player.GetComponent<PlayerMovement>().InvicibleStatus;
         PlayerGiant = Player.GetComponent<PlayerMovement>().GiantStatus;
-        
-        if (!(this.transform.position.y <=-3.15))
+
+        if (!(this.transform.position.y <= -3.15))
         {
             transform.Translate((-Vector3.up * speed) * Time.deltaTime);
-        }else
+        }
+        else
         {
             transform.Translate((Vector3.left * speed) * Time.deltaTime);
         }
@@ -32,7 +33,8 @@ public class FallEnemy : MonoBehaviour
         {
             Ccoll2D.enabled = false;
         }
-        else {
+        else
+        {
             Ccoll2D.enabled = true;
         }
         if (PlayerGiant)
@@ -49,8 +51,7 @@ public class FallEnemy : MonoBehaviour
     {
         if (other.tag == "Ground")
         {
-            explosion.Play();
-            Destroy(this.gameObject);
+            StartCoroutine(BeforeDestroyed());
         }
 
         if (other.tag == "Deleter")
@@ -68,6 +69,7 @@ public class FallEnemy : MonoBehaviour
 
     IEnumerator BeforeDestroyed()
     {
+        explosion.Play();
         yield return new WaitForSeconds(1);
         Destroy(this.gameObject);
     }
