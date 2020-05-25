@@ -103,6 +103,9 @@ public class PlayerMovement : MonoBehaviour
                Invisible(1.5f);
             }
                 
+        } else if (other.tag == "Enemy" && (GiantStatus))
+        {
+            Destroy(other.gameObject);
         }
     }
 
