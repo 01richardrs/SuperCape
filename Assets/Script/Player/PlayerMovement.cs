@@ -16,20 +16,21 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip Hit_SFX;
     public AudioClip Bonus_SFX;
     public AudioClip Coins_SFX;
-    
+
     //public Text Score;
 
     //public float gravity = 1f;
-    public bool GiantStatus=false;
-    public bool InvicibleStatus=false;
+    public bool GiantStatus = false;
+    public bool InvicibleStatus = false;
+    public bool jumpStatus = false;
 
     public float maxSpeed = 1f;
     public float SpeedMultiplier;
-    public float Speed= 10f;
-    public float JumpHeight=10f;
+    public float Speed = 10f;
+    public float JumpHeight = 10f;
 
 
-    public int HEALTH=3;
+    public int HEALTH = 3;
     void Start()
     {
         SpriteRender = GetComponent<SpriteRenderer>();
@@ -65,17 +66,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (jump >= 0.01)// add + touch Ground
         {
+            jumpStatus = true;
             coll2D.size = new Vector2(1.6f, 1.2f);
             animator.SetBool("isJump", true);
             rb.AddForce(new Vector2(0, 3 * JumpHeight));
-            rb.AddForce(transform.up * JumpHeight); 
+            rb.AddForce(transform.up * JumpHeight);
         }
-        else if (this.transform.position.y <= -.2484081) {
+        else if (this.transform.position.y <= -.2484081)
+        {
             coll2D.size = new Vector2(1.3f, 1.65f);
             animator.SetBool("isJump", false);
+            jumpStatus = false;
         }
         animator.SetFloat("Height", jump);
-        if (verticalAxis <= 0.01) 
+        if (verticalAxis <= 0.01)
         {
             rb.AddForce(-transform.up * JumpHeight);
         }
@@ -88,22 +92,23 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dead());
             //audio.Play();
             //animator.SetBool("isDead", true);
-            
+
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy"&&(!GiantStatus && !InvicibleStatus))
+        if (other.tag == "Enemy" && (!GiantStatus && !InvicibleStatus))
         {
             HEALTH--;
             Audio.PlayOneShot(Hit_SFX);
             if (HEALTH > 0)
             {
-               Invisible(1.5f);
+                Invisible(1.5f);
             }
-                
-        } else if (other.tag == "Enemy" && (GiantStatus))
+
+        }
+        else if (other.tag == "Enemy" && (GiantStatus))
         {
             Destroy(other.gameObject);
         }
@@ -113,11 +118,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //supposed to be this easy, but there is a problem sometimes the health cant increment 
         //and the health++ are counted as its Playerprefs even though there isnt.
-        if ( HEALTH < 3 )
+        if (HEALTH < 3)
         {
             HEALTH++;
-        } 
-   
+        }
+
     }
 
     public void Giant()
@@ -160,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isDead", true);
         coll2D.size = new Vector2(1.6f, 1.2f);
         this.enabled = false;
-        rb.AddForce(-transform.up*75);
+        rb.AddForce(-transform.up * 75);
         scoremanager.scoreIncrease = false;
         yield return new WaitForSeconds(2);
         loseCanvas.GetComponent<LoseMenu>().activateLoseGame();
