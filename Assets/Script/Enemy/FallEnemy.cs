@@ -9,6 +9,8 @@ public class FallEnemy : MonoBehaviour
     GameObject Player;
     public CircleCollider2D Ccoll2D;
     public float speed = 0.8f;
+    public ParticleSystem explosion;
+
     private void Start()
     {
         Ccoll2D = GetComponent<CircleCollider2D>();
@@ -45,12 +47,24 @@ public class FallEnemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.tag == "Ground")
+        {
+            Destroy(this.gameObject);
+            explosion.Play();
+        }
+
         if (other.tag == "Deleter")
         {
             //this.GetComponent<Renderer>().enabled = false;
             StartCoroutine(BeforeDestroyed());
         }
     }
+
+    //IEnumerator touchedGround()
+    //{
+    //    yield return new WaitForSeconds(2);
+    //    Destroy(this.gameObject);
+    //}
 
     IEnumerator BeforeDestroyed()
     {

@@ -8,6 +8,7 @@ TagManager:
   - Deleter
   - Cloud
   - HealthBonus
+  - Ground
   layers:
   - Default
   - TransparentFX
