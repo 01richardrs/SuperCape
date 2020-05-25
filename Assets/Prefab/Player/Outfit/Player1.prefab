@@ -148,14 +148,14 @@ MonoBehaviour:
   animator: {fileID: 688651297}
   SpriteRender: {fileID: 3722636272404279526}
   Audio: {fileID: 1358503221311189745}
-  Hit_SFX: {fileID: 8300000, guid: 7b29b2c514905ad4f90de2f814bd04d3, type: 3}
+  Hit_SFX: {fileID: 8300000, guid: 1c7e95c737634eb4f99cf6e96e2f62da, type: 3}
   Bonus_SFX: {fileID: 8300000, guid: 7dc98bc356e127e43ad882e16f019a7c, type: 3}
   Coins_SFX: {fileID: 8300000, guid: 4aa61344171316648b1fca1dd046ac81, type: 3}
   GiantStatus: 0
   InvicibleStatus: 0
   maxSpeed: 3
   SpeedMultiplier: 10
-  Speed: 50
+  Speed: 75
   JumpHeight: 15
   HEALTH: 3
 --- !u!95 &688651297

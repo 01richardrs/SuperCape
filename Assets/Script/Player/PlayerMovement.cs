@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         {
             coll2D.size = new Vector2(1.6f, 1.2f);
             animator.SetBool("isJump", true);
-            rb.AddForce(new Vector2(0, 1 * JumpHeight));
+            rb.AddForce(new Vector2(0, 3 * JumpHeight));
             rb.AddForce(transform.up * JumpHeight); 
         }
         else if (this.transform.position.y <= -.2484081) {
@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
         this.transform.localScale = new Vector3(3, 3, 1);
         coll2D.size = new Vector2(1.6f, 1.2f);
         GiantStatus = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
         this.transform.localScale = new Vector3(1, 1, 1);
         coll2D.size = new Vector2(1.3f, 1.65f);
         GiantStatus = false;
