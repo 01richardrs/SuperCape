@@ -49,8 +49,8 @@ public class FallEnemy : MonoBehaviour
     {
         if (other.tag == "Ground")
         {
-            Destroy(this.gameObject);
             explosion.Play();
+            Destroy(this.gameObject);
         }
 
         if (other.tag == "Deleter")
