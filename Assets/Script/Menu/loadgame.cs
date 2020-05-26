@@ -10,4 +10,8 @@ public class loadgame : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+    public void Exit_Game()
+    {
+        Application.Quit();
+    }
 }
