@@ -10,3 +10,5 @@ supercape includes various player and obstacle model that makes it more beatiful
 - You can pick-up bonuses ( Giant bonus / Invisible potion bonus ) thorughout the game if it is generated
 - The longer you can survive, the faster the game speed is.
 
+![image](https://user-images.githubusercontent.com/50089724/82968894-82991e00-9ff8-11ea-99e2-fc9e53acdc6a.png)
+
